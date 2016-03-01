@@ -1,0 +1,29 @@
+
+组件划分，体系结构：
+比如
+mysql：      mysql server端 + 插件式存储引擎
+graphite:    carbon + whisper + graphite web
+kafka:       broker + producter + consumer + zookeeper
+Hadoop：     hadoop common + hdfs + hadoop yarn + mapreduce 
+
+
+这些组件间如何通信（算法），因何通信，通信后完成了什么。
+
+
+每个组件下，又划分成什么角色，各个角色间如何通信（算法），因何通信，完成了什么事情。
+比如
+Hadoop Hdfs又可划分： 
+masters:NameNode, ResourceManager 
+slaves:DataNode ,NodeManager
+
+
+这样由最高层的抽象，到最底层的抽象，通过接口和通信（算法），完成想要做的事情。
+
+
+这个过程中，会获取一些数据，算法的控制因子（程序参数）。这样就会涉及到需要读取的配置文件，可能需要输出写入的配置文件（比如log），
+需要一些操作命令，配置命令
+
+
+这样组织起一个，用户操作友好的，程序运行稳定的，高性能，高可用（HA），可扩展（分布式），可监控的软件系统。
+
+同样，当需要学习某个软件系统时，就可以从最上面的抽象一层层向下剥洋葱。
